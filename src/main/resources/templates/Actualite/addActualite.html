@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{/front/images/favicon.png}">
+    <!-- Pignose Calender -->
+    <link th:href="@{/front/plugins/pg-calendar/css/pignose.calendar.min.css}" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" th:href="@{/front/plugins/chartist/css/chartist.min.css}">
+    <link rel="stylesheet" th:href="@{/front/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css}">
+    <!-- Custom Stylesheet -->
+    <link th:href="@{/front/css/style.css}" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="index.html">
+                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
+                    <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
+                    <span class="brand-title">
+                        <img src="images/logo-text.png" alt="">
+                    </span>
+                </a>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div th:replace="fragments/nav-header :: nav-header"/>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div th:replace="fragments/sidebar :: sidebar"/>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <div class="row page-titles mx-0">
+                <div class="col p-md-0">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- row -->
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="card">
+            <body>
+	<table>
+		
+    <div class="container my-5">
+
+<h2 align="center"><p style="font-size:20 ; color:cornflowerblue;">Add nos actualités</h2>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-8">
+                    <form action="#" th:action="@{/actualite/add}" th:object="${actualite}" method="post" enctype="multipart/form-data">
+                        <div class="row">
+           <div class="form-group col-md-6">
+                                <label for="id" class="col-form-label">Id</label> <input type="id" th:field="*{id}" class="form-control" id="id" placeholder="Id"/> <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}" class="text-danger"></span>
+                            </div><div class="form-group col-md-8">
+                            
+							<div class="form-group col-md-8">
+                                <label for="titre" class="col-form-label">Titre</label> <input type="text" th:field="*{titre}" class="form-control" id="label" placeholder="titre"/> <span th:if="${#fields.hasErrors('titre')}" th:errors="*{titre}" class="text-danger"></span>
+                            </div>
+                            
+                                <label for="date" class="col-form-label">DatePublication</label> <input type="date" th:field="*{datePublication}" class="form-control" id="date" placeholder="date"/> <span th:if="${#fields.hasErrors('datePublication')}" th:errors="*{datePublication}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="description" class="col-form-label">description</label> <input type="text" th:field="*{description}" class="form-control" id="description" placeholder="label"/> <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="text-danger"></span>
+                            </div>
+                            </div>
+                            <div class="form-group col-md-8">
+                            <label for="picture" class="col-form-label">Picture</label>
+                            <input class="form-control" type="file" name="files" multiple>
+      					 	</div>
+                            	
+                            <div class="col-md-8">
+                                <input type="submit" class="btn btn-lg btn-success" value="Add Actualite"/>
+                            </div>
+
+
+                            <div class="form-group col-md-8"></div>
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+                       </div>
+                         </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+         <div th:replace="fragments/row :: row"/>  
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div th:replace="fragments/footer :: footer"/>
+            
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+     <script th:src="@{/front/plugins/common/common.min.js}"></script>
+    <script th:src="@{/front/js/custom.min.js}"></script>
+    <script th:src="@{/front/js/settings.js}"></script>
+    <script th:src="@{/front/js/gleek.js}"></script>
+    <script th:src="@{/front/js/styleSwitcher.js}"></script>
+
+    <!-- Chartjs -->
+    <script th:src="@{/front/plugins/chart.js/Chart.bundle.min.js}"></script>
+    <!-- Circle progress -->
+    <script th:src="@{/front/plugins/circle-progress/circle-progress.min.js}"></script>
+    <!-- Datamap -->
+    <script th:src="@{/front/plugins/d3v3/index.js}"></script>
+    <script th:src="@{/front/plugins/topojson/topojson.min.js}"></script>
+    <script th:src="@{/front/plugins/datamaps/datamaps.world.min.js}"></script>
+    <!-- Morrisjs -->
+    <script th:src="@{/front/plugins/raphael/raphael.min.js}"></script>
+    <script th:src="@{/front/plugins/morris/morris.min.js}"></script>
+    <!-- Pignose Calender -->
+    <script th:src="@{/front/plugins/moment/moment.min.js}"></script>
+    <script th:src="@{/front/plugins/pg-calendar/js/pignose.calendar.min.js}"></script>
+    <!-- ChartistJS -->
+    <script th:src="@{/front/plugins/chartist/js/chartist.min.js}"></script>
+    <script th:src="@{/front/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js}"></script>
+
+</body>
+
+</html>

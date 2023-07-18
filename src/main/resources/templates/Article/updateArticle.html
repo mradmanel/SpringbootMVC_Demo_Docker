@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{/front/images/favicon.png}">
+    <!-- Pignose Calender -->
+    <link th:href="@{/front/plugins/pg-calendar/css/pignose.calendar.min.css}" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" th:href="@{/front/plugins/chartist/css/chartist.min.css}">
+    <link rel="stylesheet" th:href="@{/front/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css}">
+    <!-- Custom Stylesheet -->
+    <link th:href="@{/front/css/style.css}" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="index.html">
+                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
+                    <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
+                    <span class="brand-title">
+                        <img src="images/logo-text.png" alt="">
+                    </span>
+                </a>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div th:replace="fragments/nav-header :: nav-header"/>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div th:replace="fragments/sidebar :: sidebar"/>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <div class="row page-titles mx-0">
+                <div class="col p-md-0">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- row -->
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="card">
+            <div class="card-body">
+				
+	<body>
+	<table>
+		
+    <div class="container my-5">
+       
+<div class="container my-5">
+        <h3 align="center"> Update Article</h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-10">
+                    <form action="#" th:action="@{/article/edit/{id}(id=${article.id})}" th:object="${article}" method="post">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="label" class="col-form-label">Label</label> <input type="text" th:field="*{label}" class="form-control" id="label" placeholder="Label" /> <span th:if="${#fields.hasErrors('label')}" th:errors="*{label}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="price" class="col-form-label">Price</label> <input type="text" th:field="*{price}" class="form-control" id="price" placeholder="Label" /> <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="description" class="col-form-label">Description</label> <input type="text" th:field="*{description}" class="form-control" id="price" placeholder="description" /> <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="quantitte" class="col-form-label">QuantiteStocke</label> <input type="text" th:field="*{quantiteStock}" class="form-control" id="label" placeholder="quantiteStock" /> <span th:if="${#fields.hasErrors('quantiteStock')}" th:errors="*{quantitteStock}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="prix" class="col-form-label">PrixPromotion</label> <input type="text" th:field="*{prixPromotion}" class="form-control" id="label" placeholder="prixPromotion" /> <span th:if="${#fields.hasErrors('prixPromotion')}" th:errors="*{prixPromotion}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="date" class="col-form-label">DateExpiration</label> <input type="date" th:field="*{dateExpiration}" class="form-control" id="date" placeholder="date" /> <span th:if="${#fields.hasErrors('label')}" th:errors="*{dateExpiration}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                             <label for="provider" class="col-form-label">Select Provider</label>
+                            <select name="providerId" class="form-control">
+							    <option  th:each="pr: ${providers}" 
+							    th:value="${pr.id}"
+							    th:text="${pr.name}" 
+							    th:selected="(${pr.id} == ${idProvider})"
+							     />
+							</select>
+							</div>
+                            
+                            
+                            <div class="form-group col-md-8">
+                                <input type="submit" class="btn btn-primary" value="Update Article">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+         <div th:replace="fragments/row :: row"/>  
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div th:replace="fragments/footer :: footer"/>
+            
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+     <script th:src="@{/front/plugins/common/common.min.js}"></script>
+    <script th:src="@{/front/js/custom.min.js}"></script>
+    <script th:src="@{/front/js/settings.js}"></script>
+    <script th:src="@{/front/js/gleek.js}"></script>
+    <script th:src="@{/front/js/styleSwitcher.js}"></script>
+
+    <!-- Chartjs -->
+    <script th:src="@{/front/plugins/chart.js/Chart.bundle.min.js}"></script>
+    <!-- Circle progress -->
+    <script th:src="@{/front/plugins/circle-progress/circle-progress.min.js}"></script>
+    <!-- Datamap -->
+    <script th:src="@{/front/plugins/d3v3/index.js}"></script>
+    <script th:src="@{/front/plugins/topojson/topojson.min.js}"></script>
+    <script th:src="@{/front/plugins/datamaps/datamaps.world.min.js}"></script>
+    <!-- Morrisjs -->
+    <script th:src="@{/front/plugins/raphael/raphael.min.js}"></script>
+    <script th:src="@{/front/plugins/morris/morris.min.js}"></script>
+    <!-- Pignose Calender -->
+    <script th:src="@{/front/plugins/moment/moment.min.js}"></script>
+    <script th:src="@{/front/plugins/pg-calendar/js/pignose.calendar.min.js}"></script>
+    <!-- ChartistJS -->
+    <script th:src="@{/front/plugins/chartist/js/chartist.min.js}"></script>
+    <script th:src="@{/front/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js}"></script>
+
+</body>
+
+</html>
